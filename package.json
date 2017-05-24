@@ -4,10 +4,12 @@
   "main": "server.js",
   "license": "MIT",
   "dependencies": {
+    "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.2",
     "express": "^4.15.3",
+    "file-loader": "^0.11.1",
     "path": "^0.12.7",
     "postcss-cssnext": "^2.11.0",
     "postcss-loader": "^2.0.5",
@@ -16,20 +18,26 @@
     "react-redux": "^5.0.5",
     "redux": "^3.6.0",
     "style-loader": "^0.18.1",
-    "url-loader": "^0.5.8"
+    "url-loader": "^0.5.8",
+    "voca": "^1.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "express": "^4.15.3",
     "jsx-loader": "^0.13.2",
     "nodemon": "^1.11.0",
-    "webpack": "^2.6.0"
+    "npm-install-webpack-plugin": "github:webpack-contrib/npm-install-webpack-plugin",
+    "webpack": "^2.6.0",
+    "webpack-dev-middleware": "^1.10.2"
   },
   "scripts": {
-    "start": "nodemon server/index.js --exec babel-node",
-    "dev": "webpack --color=true -d",
+    "start": "nodemon server/lib.node.js",
+    "start2": "nodemon server/index.js --exec babel-node",
+    "start3": "node server/index.js",
+    "dev": "webpack --config=webpack.config.js --color=true -d --progress --watch",
     "foo": "nodemon -h"
   }
 }

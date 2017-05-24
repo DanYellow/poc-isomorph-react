@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+
+if (process.env.BROWSER) { 
+  require('./App.css'); 
+  require('./logo.svg'); 
+}
 
 class App extends Component {
   constructor(props) {
